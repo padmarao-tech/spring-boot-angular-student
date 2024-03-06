@@ -1,0 +1,37 @@
+<div style="margin: 1%;">
+  <div style="float: right;">
+    <button mat-raised-button color="primary" (click)="add()">Add</button>
+  </div>
+  <div style="padding-top: 1%;">
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="students && students.length > 0">
+          <tr *ngFor="let a of students; let i = index">
+            <td>{{ i + 1}}</td>
+            <td style="text-align: center;">{{ a.name }}</td>
+            <td style="text-align: right;">{{ a.age }}</td>
+            <td style="text-align: center;">{{ a.email }}</td>
+            <td style="text-align: center;">
+              <button mat-icon-button color="primary" (click)="add(a)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="delete(a)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
+<router-outlet></router-outlet>

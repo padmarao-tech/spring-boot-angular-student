@@ -1,0 +1,23 @@
+<div>
+    <mat-dialog-content>
+        <form [formGroup]="fg">
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input type="text" matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input type="text" matInput formControlName="email">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Age</mat-label>
+                <input type="number" matInput formControlName="age">
+            </mat-form-field>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <mat-spinner *ngIf="loading" diameter="40"></mat-spinner>
+        <button (click)="cancel()" color="warn" mat-raised-button tabindex="-1" type="button">Cancel</button>
+        <button mat-raised-button (click)="save()" [disabled]="loading || fg.invalid" color="primary">Save</button>
+    </mat-dialog-actions>
+</div>
