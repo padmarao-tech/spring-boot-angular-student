@@ -67,6 +67,7 @@ public class StudentService {
             // Prepare the response data
             Map<String, Object> response = new HashMap<>();
             response.put("message", message);
+            response.put("id", id);
             return response;
         }
     }
